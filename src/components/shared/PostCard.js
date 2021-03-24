@@ -3,8 +3,8 @@ import styled from "@emotion/styled/macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Article = styled.article`
-  /* padding: 0.5rem;
-  border: thin solid var(--colors-primary); */
+  position: relative;
+  color: var(--colors-text-dark);
 
   h3,
   p {
@@ -21,12 +21,11 @@ const Article = styled.article`
     }
   }
   > div:nth-of-type(2) {
-    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
 
     a {
-      color: var(--colors-text-light);
+      color: var(--colors-text-dark);
       display: flex;
       align-items: center;
       text-decoration: none;
@@ -41,16 +40,23 @@ const Article = styled.article`
     > div:nth-of-type(1) {
       flex-grow: 1;
       display: flex;
-      > div > div:nth-of-type(2) {
-        font-size: small;
-      }
+      align-items: center;
+      font-size: 14px;
     }
     & > div:nth-of-type(2) {
       display: flex;
       align-items: center;
-      color: var(--colors-accent-4);
       font-size: small;
     }
+  }
+
+  &:hover {
+    padding: 0.85rem;
+    /* left: -2px;
+    top: -1px; */
+    background: var(--colors-primary);
+    border-radius: 0.5rem;
+    box-shadow: inset -3px -4px var(--colors-shadow);
   }
 `;
 
@@ -83,15 +89,8 @@ function PostCard({
             <div>
               <a href={linkProfile}>
                 <span>{nickname}</span>
-                <span
-                  style={{ marginLeft: "4px", color: "var(--colors-accent-4)" }}
-                >
-                  @{username}
-                </span>
+                <span style={{ marginLeft: "4px" }}>@{username}</span>
               </a>
-            </div>
-            <div>
-              <span style={{ color: "var(--colors-accent-4)" }}>{date}</span>
             </div>
           </div>
         </div>

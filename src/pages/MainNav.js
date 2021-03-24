@@ -44,13 +44,11 @@ function MainNav() {
           <FontAwesomeIcon icon="info" size="lg" />
         </Button>
       </ToolBar>
-      <section>
-        {[1, 2, 3].map((index) => (
-          <div key={index} style={{ marginBottom: "4px" }}>
-            <PostCard />
-          </div>
-        ))}
-      </section>
+      {[1, 2, 3].map((index) => (
+        <div key={index} style={{ marginBottom: "4px" }}>
+          <PostCard />
+        </div>
+      ))}
     </Main>
   );
 }

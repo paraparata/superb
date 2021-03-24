@@ -1,63 +1,74 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled/macro";
+import { imgFlip } from "../api/imgFlip";
+
+import ToolBar from "../components/shared/ToolBar";
+import Navigation from "../components/Navigation";
+import PostCard from "../components/shared/PostCard";
+
+import superbGIF from "../assets/superb.gif";
 
 const Wrapper = styled.div`
-  width: 100vw;
   height: 100vh;
   display: flex;
-  position: relative;
-`;
-const Header = styled.header`
-  width: 100%;
-  padding-bottom: 1rem;
-  position: sticky;
-  top: 0;
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  column-gap: 0.5rem;
-  align-items: center;
-  background: var(--colors-base-3);
 `;
 
-const LeftNav = styled.nav`
-  width: 300px;
-  height: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
-  background: var(--colors-secondary);
-`;
-const Main = styled.main`
-  width: 100%;
-  height: 100%;
+const MainDiv = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   background: white;
-  overflow-x: scroll;
-`;
-const Section = styled.section`
-  width: 2000px;
+
+  > main {
+    flex-grow: 1;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: max-content;
+    gap: 2.5rem;
+    border-left: 6px solid var(--colors-shadow);
+    border-top: 6px solid var(--colors-shadow);
+    overflow-y: scroll;
+  }
 `;
 
 function Home() {
-  const handleOnScroll = (e) => {
-    e.preventDefault();
-    const container = document.getElementById("container");
-    var largeContainerScrollPosition = document.getElementById("container")
-      .scrollLeft;
-    container.scrollTo({
-      top: 0,
-      left: largeContainerScrollPosition + e.deltaY,
-      behaviour: "smooth", //if you want smooth scrolling
-    });
+  const [samples, setSamples] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    _getImgFlip();
+  }, []);
+
+  const _getImgFlip = async () => {
+    const res = await imgFlip();
+    setIsLoaded(true);
+    setSamples(res.data.memes);
   };
-  return (
-    <Wrapper>
-      {/* <Header>hey</Header> */}
-      <LeftNav>safa</LeftNav>
-      <Main id="container" onWheel={handleOnScroll}>
-        <Section>gfdsgfds</Section>
-      </Main>
-    </Wrapper>
-  );
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <Wrapper>
+        <Navigation />
+        <MainDiv>
+          <ToolBar />
+          <main>
+            <div style={{ marginBottom: "4px" }}>
+              <PostCard imgPost={superbGIF} />
+            </div>
+            {samples.map((sample) => (
+              <div key={sample.id} style={{ marginBottom: "4px" }}>
+                <PostCard imgPost={sample.url} />
+              </div>
+            ))}
+          </main>
+        </MainDiv>
+        <Navigation />
+      </Wrapper>
+    );
+  }
 }
 
 export default Home;

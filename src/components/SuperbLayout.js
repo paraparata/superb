@@ -56,7 +56,7 @@ const Div = styled.div`
   }
   > div:nth-of-type(2) {
     display: flex;
-    background: var(--colors-base-3);
+    background: var(--colors-text-light);
   }
 `;
 

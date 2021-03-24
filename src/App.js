@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -29,12 +30,18 @@ library.add(
 
 function App() {
   return (
-    <Home />
-    // <SuperbLayout
-    //   leftNav={<LeftNav />}
-    //   mainNav={<MainNav />}
-    //   rightNav={<RightNav />}
-    // />
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/superb" exact>
+          <SuperbLayout
+            leftNav={<LeftNav />}
+            mainNav={<MainNav />}
+            rightNav={<RightNav />}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
