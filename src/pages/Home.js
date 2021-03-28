@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled/macro";
-import { imgFlip } from "../api/imgFlip";
+import { imgFlip } from "../services/imgFlip";
 
 import ToolBar from "../components/shared/ToolBar";
 import Navigation from "../components/Navigation";

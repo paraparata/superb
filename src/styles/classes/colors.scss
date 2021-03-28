@@ -1,0 +1,23 @@
+$text-color: #{text-light};
+$colors: #{primary}, #{secondary}, #{accent-1}, #{accent-2}, #{accent-3},
+  #{accent-4}, #{shadow}, #{base-1}, #{base-2}, #{base-3}, #{base-4}, #{base-5};
+
+@mixin set-color($prop, $list) {
+  @each $val in $list {
+    &-#{$val} {
+      #{$prop}: $color-#{$val};
+    }
+  }
+}
+
+.color-text {
+  @include set-color(color, $colors);
+}
+
+.color-bg {
+  @include set-color(background, $colors);
+}
+
+.color-border {
+  @include set-color(border-color, $colors);
+}

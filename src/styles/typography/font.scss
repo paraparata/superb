@@ -1,0 +1,30 @@
+$font-sizes: #{xs}, #{sm}, #{md}, #{lg}, #{xl}, #{2xl}, #{3xl}, #{4xl}, #{5xl},
+  #{6xl}, #{7xl}, #{8xl}, #{9xl};
+
+@mixin set-font-size($list) {
+  @each $val in $list {
+    &-#{val} {
+      font-size: $font-size-#{$val};
+      line-height: $line-height-#{$val};
+    }
+  }
+}
+
+.text-size {
+  @include set-font-size($font-sizes);
+}
+
+.text-align {
+  &-start {
+    text-align: start;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-end {
+    text-align: end;
+  }
+  &-justify {
+    text-align: justify;
+  }
+}

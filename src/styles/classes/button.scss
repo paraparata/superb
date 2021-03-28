@@ -1,0 +1,20 @@
+.btn {
+  padding: 0.75rem 1rem;
+  position: relative;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: inset -3px -4px $color-shadow;
+
+  &:hover {
+    left: -2px;
+    top: -1px;
+    box-shadow: inset -3px -4px $colors-shadow;
+  }
+
+  &:active,
+  &:focus {
+    left: 1px;
+    top: 4px;
+    box-shadow: inset 3px 4px $colors-shadow;
+  }
+}
