@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.wrapper {
+  width: fit-content;
+
+  > img {
+    object-fit: cover;
+  }
+}
+
+%overlay {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(180deg, transparent, $color-black);
+}
+
+.gradient {
+  position: relative;
+
+  &::after {
+    @extend %overlay;
+  }
+}
+
+.poster {
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    transition: all 300ms;
+
+    &:hover {
+      @extend %overlay;
+    }
+  }
+}
+
+.block {
+  width: 100% !important;
+}
