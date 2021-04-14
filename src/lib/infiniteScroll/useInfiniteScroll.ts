@@ -1,7 +1,8 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 interface Props {
     options?: IntersectionObserverInit;
+    elementId?: HTMLElement;
 }
 
 const defaultOptions: IntersectionObserverInit = {
@@ -10,18 +11,17 @@ const defaultOptions: IntersectionObserverInit = {
     threshold: 1.0,
 };
 
-const useInfiniteScroll = ({ options = defaultOptions }: Props) => {
+export default function useInfiniteScroll({ options = defaultOptions, elementId }: Props): boolean {
     const [state, setState] = useState(false)
-    const loader = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(handleObserver, options);
-        if (loader.current) {
-            observer.observe(loader.current);
+        if (elementId) {
+            observer.observe(elementId);
         }
     }, []);
 
-    const handleObserver = (entities) => {
+    const handleObserver: IntersectionObserverCallback = (entities) => {
         const target = entities[0];
         if (target.isIntersecting) {
             setState(true)
@@ -30,7 +30,6 @@ const useInfiniteScroll = ({ options = defaultOptions }: Props) => {
         }
     };
 
-    return { state, loader };
+    return state;
 }
 
-export default useInfiniteScroll

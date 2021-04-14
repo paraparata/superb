@@ -13,7 +13,10 @@ interface Props {
 
 const Search: React.FC<Props> = ({ placeholder, onChange }) => {
   const handleSearch = (e: any) => {
-    onChange(e);
+    if (onChange) {
+      onChange(e);
+    }
+    return null;
   };
 
   return (

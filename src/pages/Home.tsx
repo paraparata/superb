@@ -1,18 +1,11 @@
-import Head from "next/head";
 import styles from "../components/layout/Home.module.scss";
 
 import { Button, Grid } from "../components/ui";
-import { Header, PostCard } from "../components/base";
+import { PostCard } from "../components/base";
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header />
       <main style={{ width: "100%" }}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
