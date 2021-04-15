@@ -8,21 +8,21 @@
   }
 }
 
-%overlay {
+@mixin overlay {
   width: 100%;
   height: 100%;
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  background-image: linear-gradient(180deg, transparent, $color-black);
+  background-image: linear-gradient(180deg, transparent, $color-white 80%);
 }
 
 .gradient {
   position: relative;
 
   &::after {
-    @extend %overlay;
+    @include overlay;
   }
 }
 
@@ -34,7 +34,7 @@
     transition: all 300ms;
 
     &:hover {
-      @extend %overlay;
+      @include overlay;
     }
   }
 }

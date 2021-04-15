@@ -14,6 +14,7 @@ export interface Props {
 export const Search: React.FC<Props> = ({
   placeholder = "Search",
   onChange,
+  ...props
 }) => {
   const handleSearch = (e: any) => {
     if (onChange) {
@@ -27,6 +28,7 @@ export const Search: React.FC<Props> = ({
       placeholder={placeholder}
       prefix={<SearchIcon />}
       onChange={(e) => handleSearch(e)}
+      {...props}
     />
   );
 };

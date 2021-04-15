@@ -1,6 +1,4 @@
-import styles from "../components/layout/Home.module.scss";
-
-import { Button, Grid } from "../components/ui";
+import { Button, Grid, Image } from "../components/ui";
 import { PostCard, PostAttrType } from "../components/base";
 
 const postData: PostAttrType = {
@@ -9,24 +7,41 @@ const postData: PostAttrType = {
   imgProfile: "https://paraparata.github.io/img/pp_400x400.jpg",
   linkProfile: "#",
   linkPost: "#",
-  imgPost: "https://bluesyemre.files.wordpress.com/2014/11/196.jpg",
+  imgPost:
+    "https://i.pinimg.com/originals/b8/fe/9c/b8fe9cb3386d82d8b2da6ec314f3a979.jpg",
   title: "Post Title",
 };
 
 export default function Home() {
   return (
-    <div>
+    <>
       <main style={{ width: "100%" }}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <Grid style={{ width: "100%" }}>
+        <Image
+          src={postData.imgPost}
+          alt="sample"
+          width="100%"
+          height="420px"
+          gradient={true}
+          block={true}
+        >
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "0.5rem",
+              position: "absolute",
+              left: 0,
+              top: 0,
+              zIndex: 4,
+            }}
+          >
+            <h1>Welcome to Superb!</h1>
+          </div>
+        </Image>
+        <Grid style={{ width: "100%", paddingTop: "24px" }}>
           {[1, 2, 3, 4, 5, 6, 7].map((item) => {
             return (
               <div key={item}>
@@ -36,17 +51,6 @@ export default function Home() {
           })}
         </Grid>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }

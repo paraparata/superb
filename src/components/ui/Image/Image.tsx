@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ImgHTMLAttributes } from "react";
 import cn from "classnames";
 import styles from "./Image.module.scss";
 
-export interface Props {
+export interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
   gradient?: boolean;

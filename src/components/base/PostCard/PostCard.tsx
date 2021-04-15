@@ -10,7 +10,7 @@ export interface Post {
   imgProfile?: string;
   linkProfile?: string;
   linkPost?: string;
-  imgPost?: string;
+  imgPost: string;
   title?: string;
   desc?: string;
   date?: string;

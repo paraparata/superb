@@ -22,6 +22,8 @@ export const Header = ({ ...props }) => {
       </div>
       <div>
         <Search placeholder="Search" onChange={(e) => handleOnChange(e)} />
+      </div>
+      <div>
         <Button>About</Button>
       </div>
     </header>
