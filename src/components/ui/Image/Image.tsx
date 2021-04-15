@@ -2,7 +2,15 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Image.module.scss";
 
-export default function Image({
+export interface Props {
+  src: string;
+  alt: string;
+  gradient?: boolean;
+  poster?: boolean;
+  block?: boolean;
+}
+
+export const Image: React.FC<Props> = ({
   src,
   alt,
   gradient = false,
@@ -10,7 +18,7 @@ export default function Image({
   block = false,
   children,
   ...props
-}) {
+}) => {
   const classNames = cn(styles.wrapper, {
     [styles.gradient]: gradient,
     [styles.poster]: poster,
@@ -29,4 +37,6 @@ export default function Image({
       {children}
     </div>
   );
-}
+};
+
+export default Image;

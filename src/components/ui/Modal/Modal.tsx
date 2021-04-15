@@ -2,12 +2,22 @@ import React, { useEffect } from "react";
 import cn from "classnames";
 import styles from "./Modal.module.scss";
 
-export default function Modal({ show, children, onClose, ...props }) {
+export interface Props {
+  show: boolean;
+  onClose: (...args: any[]) => any;
+}
+
+export const Modal: React.FC<Props> = ({
+  show,
+  children,
+  onClose,
+  ...props
+}) => {
   const classNames = cn(styles.modal, {
     [styles.show]: show,
   });
 
-  const handleOnPressEsc = (e) => {
+  const handleOnPressEsc = (e: any) => {
     if ((e.charCode || e.keyCode) === 27) {
       onClose();
     }
@@ -18,6 +28,7 @@ export default function Modal({ show, children, onClose, ...props }) {
     return () => {
       document.removeEventListener("keydown", handleOnPressEsc);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -26,4 +37,6 @@ export default function Modal({ show, children, onClose, ...props }) {
       {children}
     </div>
   );
-}
+};
+
+export default Modal;

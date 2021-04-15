@@ -1,1 +1,2 @@
-export { default } from "./PostCard"
+export { default } from "./PostCard";
+export type { Props, Post } from "./PostCard"

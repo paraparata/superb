@@ -18,13 +18,15 @@
   }
 
   &:active {
+    padding-bottom: 9px;
     top: 2px;
     box-shadow: none;
   }
 
   // Size
   &-super {
-    padding: 9px 16px;
+    padding: 9px 16px 11px 16px;
+    // padding-bottom: 11px;
   }
 
   &-blok {
@@ -68,14 +70,15 @@
       top: 0;
       z-index: 5;
       content: " ";
-      background: $color-accent-1;
+      background: white;
       transform: rotate(8deg);
     }
 
+    &:hover,
     &:active {
       left: 0;
       top: 0;
-      box-shadow: inset -3px -4px $color-shadow;
+      box-shadow: inset 0 -4px $color-shadow;
     }
   }
 }

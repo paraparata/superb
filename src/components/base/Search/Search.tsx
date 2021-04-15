@@ -6,12 +6,15 @@ import { Input } from "../../ui";
 // Detect device width
 // const mobileView = window.screen.width < 600;
 
-interface Props {
+export interface Props {
   placeholder?: string;
   onChange?: (...args: any[]) => any;
 }
 
-const Search: React.FC<Props> = ({ placeholder, onChange }) => {
+export const Search: React.FC<Props> = ({
+  placeholder = "Search",
+  onChange,
+}) => {
   const handleSearch = (e: any) => {
     if (onChange) {
       onChange(e);

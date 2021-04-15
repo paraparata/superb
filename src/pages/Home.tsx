@@ -1,7 +1,17 @@
 import styles from "../components/layout/Home.module.scss";
 
 import { Button, Grid } from "../components/ui";
-import { PostCard } from "../components/base";
+import { PostCard, PostAttrType } from "../components/base";
+
+const postData: PostAttrType = {
+  username: "sutar",
+  nickname: "Paraparata",
+  imgProfile: "https://paraparata.github.io/img/pp_400x400.jpg",
+  linkProfile: "#",
+  linkPost: "#",
+  imgPost: "https://bluesyemre.files.wordpress.com/2014/11/196.jpg",
+  title: "Post Title",
+};
 
 export default function Home() {
   return (
@@ -20,7 +30,7 @@ export default function Home() {
           {[1, 2, 3, 4, 5, 6, 7].map((item) => {
             return (
               <div key={item}>
-                <PostCard />
+                <PostCard post={postData} />
               </div>
             );
           })}

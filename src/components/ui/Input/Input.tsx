@@ -11,7 +11,7 @@ export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   onChange?: (...args: any[]) => any;
 }
 
-const Input: React.FC<Props> = ({
+export const Input: React.FC<Props> = ({
   className,
   prefix,
   suffix,

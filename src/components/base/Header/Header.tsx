@@ -5,7 +5,9 @@ import styles from "./Header.module.scss";
 import { Button } from "../../ui";
 import { Search } from "../../base";
 
-const Header = ({ ...props }) => {
+import logo from "../../../assets/superb-logo.svg";
+
+export const Header = ({ ...props }) => {
   const classNames = cn(styles.header);
 
   const handleOnChange = (e: any) => {
@@ -16,7 +18,7 @@ const Header = ({ ...props }) => {
     <header className={classNames} {...props}>
       <div>
         {/* <span className={styles.title}>Superb!</span> */}
-        <img src="/superb-logo.svg" alt="superb!" height="38" />
+        <img src={logo} alt="superb!" height="38" />
       </div>
       <div>
         <Search placeholder="Search" onChange={(e) => handleOnChange(e)} />

@@ -4,7 +4,7 @@ import styles from "./PostCard.module.scss";
 
 import HeartIcon from "../../icons/HeartFill";
 
-interface Post {
+export interface Post {
   username?: string;
   nickname?: string;
   imgProfile?: string;
@@ -16,26 +16,24 @@ interface Post {
   date?: string;
 }
 
-interface Props {
+export interface Props {
   post?: Post;
   variant?: "default" | "frame";
 }
 
-const PostCard: React.FC<Props> = ({
+export const PostCard: React.FC<Props> = ({
   post = {},
   variant = "default",
   ...props
 }) => {
   const {
-    username = "paraparata",
-    nickname = "Paraparata",
-    imgProfile = "https://paraparata.github.io/img/pp_400x400.jpg",
-    linkProfile = "#",
-    linkPost = "#",
-    imgPost = "https://bluesyemre.files.wordpress.com/2014/11/196.jpg",
-    title = "Post Title",
-    desc = "Post Desc",
-    date = "5min ago",
+    username,
+    nickname,
+    imgProfile,
+    linkProfile,
+    linkPost,
+    imgPost,
+    title,
   } = post;
   const classNames = cn(styles.card, {
     [styles["card-frame"]]: variant === "frame",
