@@ -45,22 +45,20 @@ export const PostCard: React.FC<Props> = ({
         <a href={linkPost}>
           <img src={imgPost} alt={title}></img>
         </a>
-        {/* <h3>{title}</h3>
-        <p>{desc}</p> */}
-      </div>
-      <div>
         <div>
           <a href={linkProfile}>
             <img src={imgProfile} alt={`${username} profile`}></img>
           </a>
-          <div>
-            <div>
-              <a href={linkProfile}>
-                <span>{nickname}</span>
-                <span style={{ marginLeft: "4px" }}>@{username}</span>
-              </a>
-            </div>
-          </div>
+          <a href={linkProfile}>
+            <span style={{ marginLeft: "4px" }}>@{username}</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a href={linkProfile}>
+            <span>{title}</span>
+          </a>
         </div>
         <div>
           <HeartIcon width="12" height="12" />

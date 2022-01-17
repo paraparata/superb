@@ -12,6 +12,11 @@ const postData: PostAttrType = {
   title: "Post Title",
 };
 
+const postsData: number[] = [];
+for (let i = 0; i < 20; i++) {
+  postsData.push(i);
+}
+
 export default function Home() {
   return (
     <>
@@ -42,7 +47,7 @@ export default function Home() {
           </div>
         </Image>
         <Grid style={{ width: "100%", paddingTop: "24px" }}>
-          {[1, 2, 3, 4, 5, 6, 7].map((item) => {
+          {postsData.map((item) => {
             return (
               <div key={item}>
                 <PostCard post={postData} />

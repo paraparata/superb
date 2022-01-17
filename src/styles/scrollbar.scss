@@ -1,0 +1,29 @@
+@import "../components/variables.scss";
+
+::-webkit-scrollbar {
+  @include mq("md") {
+    width: 20px;
+    background: $color-base-4;
+  }
+}
+
+::-webkit-scrollbar-track {
+  @include mq("md") {
+    background-color: transparent;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  @include mq("md") {
+    background-color: $color-luminocity;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @include mq("md") {
+    background-color: $color-primary;
+  }
+}

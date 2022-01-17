@@ -7,11 +7,13 @@ import { Input } from "../../ui";
 // const mobileView = window.screen.width < 600;
 
 export interface Props {
+  className?: string;
   placeholder?: string;
   onChange?: (...args: any[]) => any;
 }
 
 export const Search: React.FC<Props> = ({
+  className,
   placeholder = "Search",
   onChange,
   ...props
@@ -25,6 +27,7 @@ export const Search: React.FC<Props> = ({
 
   return (
     <Input
+      className={className}
       placeholder={placeholder}
       prefix={<SearchIcon />}
       onChange={(e) => handleSearch(e)}

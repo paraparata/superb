@@ -1,0 +1,43 @@
+@import "../components//variables.scss";
+
+$colors: (
+  "primary": $color-primary,
+  "secondary": $color-secondary,
+  "accent-1": $color-accent-1,
+  "accent-2": $color-accent-2,
+  "accent-3": $color-accent-3,
+  "accent-4": $color-accent-4,
+  "shadow": $color-shadow,
+  "luminocity": $color-luminocity,
+  "overlay": $color-overlay,
+  "base-1": $color-base-1,
+  "base-2": $color-base-2,
+  "base-3": $color-base-3,
+  "base-4": $color-base-4,
+  "base-5": $color-base-5,
+  "white": $color-white,
+  "black": $color-black,
+);
+
+@mixin text-color-gen($name, $color) {
+  .text-#{$name} {
+    color: $color !important;
+  }
+}
+
+@mixin bg-color-gen($name, $color) {
+  .bg-#{$name} {
+    background: $color !important;
+  }
+}
+@mixin border-color-gen($name, $color) {
+  .border-#{$name} {
+    border-color: $color !important;
+  }
+}
+
+@each $name, $color in $colors {
+  @include text-color-gen($name, $color);
+  @include bg-color-gen($name, $color);
+  @include border-color-gen($name, $color);
+}

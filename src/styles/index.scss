@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "../components/variables.scss";
 
+@import "./colors.scss";
+@import "./scrollbar.scss";
+
 html,
 body {
   padding: 0;
@@ -24,33 +27,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-/* custom scrollbar */
-::-webkit-scrollbar {
-  @include mq("md") {
-    width: 20px;
-    background: $color-base-4;
-  }
-}
-
-::-webkit-scrollbar-track {
-  @include mq("md") {
-    background-color: transparent;
-  }
-}
-
-::-webkit-scrollbar-thumb {
-  @include mq("md") {
-    background-color: $color-luminocity;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
-  }
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @include mq("md") {
-    background-color: $color-primary;
-  }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import cn from "classnames";
 import styles from "./Header.module.scss";
 
+import Login from "../../auth/Login";
 import { Button } from "../../ui";
 import { Search } from "../../base";
 
@@ -21,10 +22,15 @@ export const Header = ({ ...props }) => {
         <img src={logo} alt="superb!" height="38" />
       </div>
       <div>
-        <Search placeholder="Search" onChange={(e) => handleOnChange(e)} />
+        <Search
+          className={styles["full-width"]}
+          placeholder="Search"
+          onChange={(e) => handleOnChange(e)}
+        />
       </div>
       <div>
-        <Button>About</Button>
+        <Login />
+        <Button>SignUp</Button>
       </div>
     </header>
   );

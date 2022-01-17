@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 4rem;
   color: $color-white;
   background: $color-base-4;
   // border: 2px solid $color-primary;
@@ -19,6 +20,10 @@
   & > div {
     display: flex;
     gap: 1rem;
+
+    &:nth-of-type(2) {
+      flex: 1;
+    }
   }
 }
 
@@ -43,4 +48,8 @@
       $color-primary 20%
     );
   }
+}
+
+.full-width {
+  width: 100%;
 }

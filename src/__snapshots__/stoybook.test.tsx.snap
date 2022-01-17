@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Button Default 1`] = `
+<button
+  className="button button-super"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Button Disabled 1`] = `
+<button
+  className="button button-super button-disabled"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots Header Default 1`] = `
+<header
+  className="header"
+>
+  <div>
+    <img
+      alt="superb!"
+      height="38"
+      src="superb-logo.svg"
+    />
+  </div>
+  <div>
+    <label
+      className="input full-width"
+    >
+      <svg
+        fill="currentColor"
+        height="16"
+        viewBox="0 0 16 16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+        />
+      </svg>
+      <input
+        onChange={[Function]}
+        placeholder="Search"
+      />
+    </label>
+  </div>
+  <div>
+    <div
+      className="modal"
+    >
+      <div
+        className="blankspace"
+        onClick={[Function]}
+      />
+      <div>
+        <h1>
+          siapa
+        </h1>
+      </div>
+    </div>
+    <button
+      className="button button-super"
+      onClick={[Function]}
+    >
+      Login
+    </button>
+    <button
+      className="button button-super"
+    >
+      SignUp
+    </button>
+  </div>
+</header>
+`;
+
+exports[`Storyshots Input Default 1`] = `
+<label
+  className="input"
+>
+  <input
+    onChange={[Function]}
+    placeholder="Placeholder"
+  />
+</label>
+`;
+
+exports[`Storyshots Input Disabled 1`] = `
+<label
+  className="input disabled"
+>
+  <input
+    disabled={true}
+    onChange={[Function]}
+    placeholder="Placeholder"
+  />
+</label>
+`;
+
+exports[`Storyshots Post Card Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "width": "500px",
+      }
+    }
+  >
+    <article
+      className="card"
+    >
+      <div>
+        <a
+          href="#"
+        >
+          <img
+            alt="Post Title"
+            src="https://i.pinimg.com/originals/b8/fe/9c/b8fe9cb3386d82d8b2da6ec314f3a979.jpg"
+          />
+        </a>
+        <div>
+          <a
+            href="#"
+          >
+            <img
+              alt="paraparata profile"
+              src="https://paraparata.github.io/img/pp_400x400.jpg"
+            />
+          </a>
+          <a
+            href="#"
+          >
+            <span
+              style={
+                Object {
+                  "marginLeft": "4px",
+                }
+              }
+            >
+              @
+              paraparata
+            </span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div>
+          <a
+            href="#"
+          >
+            <span>
+              Post Title
+            </span>
+          </a>
+        </div>
+        <div>
+          <svg
+            fill="currentColor"
+            height="12"
+            viewBox="0 0 16 16"
+            width="12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+              fillRule="evenodd"
+            />
+          </svg>
+          <span
+            style={
+              Object {
+                "marginLeft": "4px",
+              }
+            }
+          >
+            120
+          </span>
+        </div>
+      </div>
+      <div />
+    </article>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Search Default 1`] = `
+<label
+  className="input"
+>
+  <svg
+    fill="currentColor"
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+    />
+  </svg>
+  <input
+    onChange={[Function]}
+    placeholder="Search"
+  />
+</label>
+`;

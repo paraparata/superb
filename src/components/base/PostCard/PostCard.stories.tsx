@@ -10,7 +10,7 @@ import {
 const centeredDecorator = (cb: () => StoryFnReactReturnType) => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
-      <div style={{ width: "300px" }}>{cb()}</div>
+      <div style={{ width: "500px" }}>{cb()}</div>
     </div>
   );
 };
@@ -27,7 +27,8 @@ const defaultPropsValue: PostInterface = {
   imgProfile: "https://paraparata.github.io/img/pp_400x400.jpg",
   linkProfile: "#",
   linkPost: "#",
-  imgPost: "https://bluesyemre.files.wordpress.com/2014/11/196.jpg",
+  imgPost:
+    "https://i.pinimg.com/originals/b8/fe/9c/b8fe9cb3386d82d8b2da6ec314f3a979.jpg",
   title: "Post Title",
   desc: "Post Desc",
   date: "5min ago",
